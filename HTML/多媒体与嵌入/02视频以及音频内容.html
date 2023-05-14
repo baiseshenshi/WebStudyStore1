@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>视频内容</h2>
+    <!--
+         使用多个媒体源头
+         controls属性使得用户得以使用控件来控制视频的播放、回退、快进等操作
+         type属性用以标记视频格式，是游览器能快速识别可播放的格式
+         video也还具有其他属性
+            width和height 宽高
+            autoplay 自动播放 仅在muted属性下可用
+            loop 循环播放
+            muted 播放时默认静音
+            poster 未播放时的视频封面
+            preload
+                这个属性被用来缓冲较大的文件，有 3 个值可选：
+                "none" ：不缓冲
+                "auto" ：页面加载后缓存媒体文件
+                "metadata" ：仅缓冲文件的元数据     
+     -->
+    <video controls muted autoplay loop poster="./public/02/poster.png">
+        <source src="./public/02/rabbit320.mp4" type="video/mp4">
+        <source src="./public/02/rabbit320.webm" type="video/webm">
+    </video>
+
+    <!-- 
+        音频的属性和video几乎一模一样
+        但音频没有图像，所以没有
+            width和height属性
+            poster属性
+     -->
+    <h2>音乐内容</h2>
+    <audio controls muted autoplay>
+        <source src="public/02/rabbit320.mp4" type="audio/mp4">
+        <source src="public/02/rabbit320.webm" type="audio/webm">
+    </audio>
+
+    <h2>字幕</h2>
+    <!-- 
+        为视频添加字幕
+     -->
+    <video controls poster="./public/02/poster.png">
+        <source src="./public/02/rabbit320.mp4" type="video/mp4">
+        <source src="public/02/rabbit320.webm" type="video/webm">
+        <track kind="subtitles" src="public/02/test.vtt" srclang="cn"></track>
+    </video>
+</body>
+
+</html>
